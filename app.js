@@ -20,7 +20,8 @@ const authRoutes = require("./routes/auth");
 
 
 //mongoose.connect("mongodb://localhost/yelpCamp")
-mongoose.connect("mongodb+srv://Poorav:PooravLynx@cluster0.7eqg5.mongodb.net/Cluster0?retryWrites=true&w=majority", {
+//mongodb+srv://Poorav:PooravLynx@cluster0.7eqg5.mongodb.net/Cluster0?retryWrites=true&w=majority
+mongoose.connect("DATABASEURL", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
