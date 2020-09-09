@@ -19,10 +19,11 @@ const commentRoutes = require("./routes/comments");
 const authRoutes = require("./routes/auth");
 
 
-
-mongoose.connect("mongodb://localhost/yelpCamp", {
+//mongoose.connect("mongodb://localhost/yelpCamp")
+mongoose.connect("mongodb+srv://Poorav:PooravLynx@cluster0.7eqg5.mongodb.net/Cluster0?retryWrites=true&w=majority", {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 })
 .then(() => console.log("Connected to DB!"))
 .catch(error => console.log(error.message));
