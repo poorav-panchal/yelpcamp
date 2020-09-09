@@ -19,15 +19,32 @@ const commentRoutes = require("./routes/comments");
 const authRoutes = require("./routes/auth");
 
 
-//mongoose.connect("mongodb://localhost/yelpCamp")
-//mongodb+srv://Poorav:PooravLynx@cluster0.7eqg5.mongodb.net/Cluster0?retryWrites=true&w=majority
-mongoose.connect("process.env.DATABASEURL", {
+//WHEN USING ONE DATABASE, COMMENT THE OTHER ONE OUT
+
+//==========================================================
+// WHEN USING LOCAL SERVER
+// mongoose.connect("mongodb://localhost/yelpCamp", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true
+// })
+// .then(() => console.log("Connected to DB!"))
+// .catch(error => console.log(error.message));
+//===========================================================
+
+
+//==========================================================
+// WHEN USING DEPLOYED SERVER
+mongoose.connect("mongodb+srv://Poorav:PooravLynx@cluster0.7eqg5.mongodb.net/Cluster0?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
 })
 .then(() => console.log("Connected to DB!"))
 .catch(error => console.log(error.message));
+//===========================================================
+
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 
