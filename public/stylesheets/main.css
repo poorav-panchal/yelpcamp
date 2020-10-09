@@ -1,3 +1,7 @@
+nav{
+    margin-bottom: 5vh;
+}
+
 .thumbnail img{
     width: 100%;
 }
@@ -16,4 +20,17 @@
 
 .welcome{
     font-family: 'Josefin Sans', sans-serif;
+}
+
+.form{
+    flex-direction: column;
+}
+
+.inputs{
+    width: 30%;
+    margin: 40px auto;
+}
+
+li{
+    list-style: none;
 }

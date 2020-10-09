@@ -12,15 +12,33 @@ const User = require("../models/user");
 
 //shows all campgrounds
 router.get("/campgrounds", function(req, res){
-    //Get campgrounds from DB
-    Campground.find({}, function(err, allCampgrounds){
-        if(err){
-            console.log(err);
-        }
-        else{
-            res.render("Campgrounds/campgrounds", {campgrounds:allCampgrounds});
-        }
-    });
+    if(req.query.search){
+        //Get campgrounds from DB related to searched query
+        const regex = new RegExp(escapeRegex(req.query.search), 'gi');
+        Campground.find({name: regex}, function(err, allCampgrounds){
+            if(err){
+                console.log(err);
+            }
+            else{
+                if(allCampgrounds.length === 0){
+                    req.flash("error", "No match found");
+                    return res.redirect("/campgrounds");
+                }
+                res.render("Campgrounds/campgrounds", {campgrounds:allCampgrounds}); 
+            }
+        });
+    }
+    else{
+        //Get campgrounds from DB
+        Campground.find({}, function(err, allCampgrounds){
+            if(err){
+                console.log(err);
+            }
+            else{
+                res.render("Campgrounds/campgrounds", {campgrounds:allCampgrounds});
+            }
+        });
+    } 
 });
 
 
@@ -30,6 +48,8 @@ router.post("/campgrounds", middleware.isLoggedIn, function(req, res){
     let price = req.body.price;
     let image = req.body.image;
     let description = req.body.description;
+    let longitude = req.body.longitude;
+    let latitude = req.body.latitude;
     let author = {
         id: req.user._id,
         username: req.user.username
@@ -39,7 +59,9 @@ router.post("/campgrounds", middleware.isLoggedIn, function(req, res){
         price: price,
         image: image, 
         description: description, 
-        author: author
+        author: author,
+        longitude: longitude,
+        latitude: latitude
     }
     //Add new Campground to Database
     Campground.create(newCampground, function(err, newCreated){
@@ -112,5 +134,9 @@ router.delete("/campgrounds/:id", middleware.checkCampgroundOwner, function(req,
         }
     });
 });
+
+function escapeRegex(text){
+   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"); 
+};
 
 module.exports = router;

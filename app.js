@@ -1,4 +1,6 @@
 //PACKAGES
+// require("dotenv").config()
+
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
@@ -56,6 +58,8 @@ app.use(flash());
 
 app.use(express.static(__dirname + "/public"));
 
+app.locals.moment = require("moment");
+
 //seed the Database
 // seedDB();
 
@@ -82,7 +86,6 @@ app.use(campgroundRoutes);
 app.use(commentRoutes);
 app.use(authRoutes);
 
-//ROUTES
 
 
 
