@@ -40,7 +40,7 @@
                     <h3 class="card-title"><a><%= campground.name %></a></h3>
                     <h5 class="card-text" style="text-align: right;">$<%= campground.price %>/night</h5>
                     <p class="card-text"><%= campground.description %></p>
-                    <p>
+                    <p class="submitted">
                         <em>
                             Submitted by: <a href="/profile/<%= campground.author.id %>"><%= campground.author.username %></a>, <%= moment(campground.createdAt).fromNow() %>
                         </em>
