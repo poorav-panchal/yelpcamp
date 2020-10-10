@@ -34,3 +34,126 @@ nav{
 li{
     list-style: none;
 }
+
+@media screen and (max-width: 1024px){
+    /* .navbar{
+        height: 4vh;
+    } */
+    /* .navbar-toggler-icon{
+        width: 2rem;
+        height: 2rem;
+    } */
+    .navbar-brand{
+        font-size: 2rem;
+        margin-left: 2vw;
+    }
+    .navbar-toggler{
+        padding: 0;
+        font-size: 2rem;
+        border: none;
+    }
+    li{
+        font-size: 1.5rem;
+    }
+    .container{
+        max-width: 100%;
+    }
+
+    .welcome{
+        font-size: 3rem;
+    }
+    .picked{
+        font-size: 2rem;
+    }
+    .btn-lg{
+        font-size: 1.75rem;
+    }
+    .form-control{
+        font-size: 1.75rem;
+        width: 80%;
+        margin: auto;
+    }
+    .btn{
+        font-size: 1.75rem;
+    }
+    @media (min-width: 768px){
+        .col-md-6 {
+            -ms-flex: 0 0 50%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+    .card-div{
+        margin-bottom: 20px;
+    }
+
+    @media (min-width: 768px){
+        .col-md-3 {
+            -ms-flex: 0 0 25%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        
+        .col-md-9 {
+            -ms-flex: 0 0 75%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+    
+    .card-title{
+        font-size: 2rem;
+    }
+    .card-text{
+        font-size: 1.75rem;
+    }
+    .btn-block{
+        width: 80%;
+        margin: auto;
+    }
+    .goBack{
+        margin-left: 10%;
+        font-size: 1.25rem;
+    }
+    .alert{
+        font-size: 1.25rem;
+    }
+
+    legend{
+        padding-left: 10%;
+        font-size: 1.75rem;
+    }
+    label{
+        padding-left: 10%;
+        font-size: 1.25rem;
+    }
+    .resetBtn{
+        margin-left: 10%;
+    }
+
+    @media (min-width: 768px){
+        .col-md-4 {
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+    @media (min-width: 768px){
+        .col-md-8 {
+            -ms-flex: 0 0 66.666667%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+    .fullName{
+        font-size: 1.75rem;
+    }
+    .profileText{
+        font-size: 1.25rem;
+    }
+    .allCamp{
+        margin-top: 3vh;
+    }
+
+}
+    
