@@ -25,25 +25,25 @@ const authRoutes = require("./routes/auth");
 
 //==========================================================
 // WHEN USING LOCAL SERVER
-// mongoose.connect("mongodb://localhost/yelpCamp", {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true
-// })
-// .then(() => console.log("Connected to DB!"))
-// .catch(error => console.log(error.message));
-//===========================================================
-
-
-//==========================================================
-// WHEN USING DEPLOYED SERVER
-mongoose.connect("mongodb+srv://Poorav:PooravLynx@cluster0.7eqg5.mongodb.net/Cluster0?retryWrites=true&w=majority", {
+mongoose.connect("mongodb://localhost/yelpCamp", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
 })
 .then(() => console.log("Connected to DB!"))
 .catch(error => console.log(error.message));
+//===========================================================
+
+
+//==========================================================
+// WHEN USING DEPLOYED SERVER
+// mongoose.connect("mongodb+srv://Poorav:PooravLynx@cluster0.7eqg5.mongodb.net/Cluster0?retryWrites=true&w=majority", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true
+// })
+// .then(() => console.log("Connected to DB!"))
+// .catch(error => console.log(error.message));
 //===========================================================
 
 
